@@ -1,4 +1,4 @@
-import './App.css';
+
 import HomePage from './components/HomePage';
 import NavBar from './components/NavBar';
 function App() {
@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <h1>App component</h1>
       <HomePage/>
     </div>
   );
