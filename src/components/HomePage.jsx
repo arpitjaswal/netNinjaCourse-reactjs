@@ -2,20 +2,26 @@ import React from 'react'
 
 import { useState } from 'react';
 
-const HomePage = (e) => {
-    const [name, setName] = useState("Arpit");
-    const [age, setAge] = useState(23);
-    const handleClick = ()=>{
-      setName("Ananya");
-      setAge(49);
-    }
-  return (
-    <>
-        <div className='content'>Home Page</div>
-        <p>{name} is {age} years old.</p>
-        <button onClick={handleClick}>Click Me!</button>
+const HomePage = () => {
+    const [blogs, setBlogs] = useState([
+        { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
+        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
+        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
+    ])
 
-    </>
+  return (
+    <div className='home'>
+    {
+        blogs.map(
+            (blogs)=>(
+                <div className="blog-preview" key={blogs.id}>
+                    <h2>{blogs.title}</h2>
+                    <p>Written by: {blogs.author}</p>
+                </div>
+            )
+        )
+       }
+    </div>
   )
 }
 
